@@ -141,3 +141,4 @@ After deploying:
 - RLS on every Supabase table
 - Finder data minimisation: no name, no email, location only
 - Scan page returns only `name + category + status` — no owner data
+This is good!!

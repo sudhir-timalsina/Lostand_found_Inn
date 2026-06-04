@@ -7,7 +7,7 @@ import itemsRouter from './routes/items.js'
 import scanRouter from './routes/scan.js'
 
 const app = express()
-const PORT = process.env.PORT || 4000
+const PORT = process.env.PORT || 5500
 
 // Security middleware
 app.use(helmet())
