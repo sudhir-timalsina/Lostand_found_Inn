@@ -62,8 +62,8 @@ export default function Register() {
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
-          <span className="text-5xl">🏷️</span>
-          <h1 className="mt-3 text-2xl font-bold text-gray-900">Lost &amp; Found</h1>
+          <span className="text-5xl"></span>
+          <h1 className="mt-3 text-2xl font-bold text-gray-900">Firta</h1>
           <p className="text-gray-500 text-sm mt-1">Create your account</p>
         </div>
 
