@@ -11,10 +11,37 @@ const PORT = process.env.PORT || 5500
 
 // Security middleware
 app.use(helmet())
+
+// CORS — must be before all routes
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+  origin: function (origin, callback) {
+    const allowed = [
+      process.env.FRONTEND_URL,
+      'http://localhost:5173',
+    ].filter(Boolean)
+
+    // Allow requests with no origin (mobile apps, curl, Postman etc.)
+    if (!origin) return callback(null, true)
+
+    if (allowed.includes(origin)) {
+      callback(null, true)
+    } else {
+      callback(new Error(`CORS blocked: ${origin}`))
+    }
+  },
   credentials: true,
 }))
+
+// Safety net — explicit headers + handle preflight OPTIONS
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', process.env.FRONTEND_URL)
+  res.header('Access-Control-Allow-Credentials', 'true')
+  res.header('Access-Control-Allow-Methods', 'GET,POST,PATCH,DELETE,OPTIONS')
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization')
+  if (req.method === 'OPTIONS') return res.sendStatus(200)
+  next()
+})
+
 app.use(express.json())
 
 // Rate limiters
