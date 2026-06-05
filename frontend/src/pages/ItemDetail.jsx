@@ -9,8 +9,13 @@ import ScanMap from '../components/ScanMap'
 const API_URL = import.meta.env.VITE_API_URL
 
 const CATEGORY_ICONS = {
-  electronics: , bag: , keys: ,
-  wallet: , clothing: , documents: , other: ,
+  electronics: '💻',
+  bag:         '👜',
+  keys:        '🔑',
+  wallet:      '👛',
+  clothing:    '👕',
+  documents:   '📄',
+  other:       '📦',
 }
 
 export default function ItemDetail() {
