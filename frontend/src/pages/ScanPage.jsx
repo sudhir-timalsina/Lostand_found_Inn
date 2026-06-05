@@ -4,8 +4,8 @@ import { useParams } from 'react-router-dom'
 const API_URL = import.meta.env.VITE_API_URL
 
 const CATEGORY_ICONS = {
-  electronics: '💻', bag: '👜', keys: '🔑',
-  wallet: '👛', clothing: '👕', documents: '📄', other: '📦',
+  electronics: , bag: , keys: ,
+  wallet: , clothing: , documents: , other: ,
 }
 
 const GATED_MESSAGES = {
